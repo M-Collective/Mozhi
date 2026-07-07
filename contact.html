@@ -21,3 +21,27 @@
       --color-sage: #889e81;
       --color-forest: #2c362b;
       --font-serif: 'Cormorant Garamond', serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    body {
+      background-color: #2a3a29;
+      color: var(--color-beige);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-serif);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Crumbled tissue paper background texture in Forest Green */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        /* Organic paper fibers */
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.08' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
