@@ -444,3 +444,53 @@ body {
   color: var(--color-ink-muted);
   text-transform: uppercase;
 }
+
+.card-body-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.grid-col-left {
+  flex: 1.2;
+}
+
+.grid-col-right {
+  flex: 1.8;
+  text-align: right;
+  border-left: 1px solid rgba(20, 18, 15, 0.08);
+  padding-left: 20px;
+}
+
+.card-tamil {
+  font-size: 3.2rem;
+  color: var(--color-ink-red);
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+
+.card-sub {
+  font-size: 0.52rem;
+  letter-spacing: 0.28em;
+  color: var(--color-ink-muted);
+}
+
+.card-text {
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+
+.card-ftr {
+  font-size: 0.54rem;
+  letter-spacing: 0.28em;
+  text-align: center;
+  color: var(--color-rust);
+}
+
+/* Card Back Layout */
+.card-back {
+  transform: rotateY(180deg);
