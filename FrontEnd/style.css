@@ -2581,40 +2581,49 @@ body {
     padding: 16px 16px 40px 16px !important;
   }
   
-  /* ─── ABOUT US (HORIZONTAL SCROLL) GALLERY ─── */
+  /* ─── ABOUT US (HORIZONTAL SCROLL) GALLERY (REIMAGINED STICKY MOBILE EFFECT) ─── */
   .section-horizontal-scroll {
-    height: auto !important;
-    padding: 80px 20px !important;
+    height: 180vh !important; /* Headroom scroll space for sticky animation */
+    position: relative !important;
     box-sizing: border-box;
   }
   .scroll-track-horizontal {
-    height: auto !important;
+    height: 100% !important;
   }
   .sticky-container {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
     width: 100% !important;
-    height: auto !important;
-    overflow: visible !important;
-    background: transparent !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    background-color: var(--color-beige) !important;
   }
-  .gallery-hud,
+  .gallery-hud {
+    display: flex !important;
+    left: 24px !important;
+    right: 24px !important;
+    top: calc(var(--nav-h) + 12px) !important;
+    z-index: 50 !important;
+  }
   .gallery-scroll-hint {
-    display: none !important;
+    display: none !important; /* Hide scroll hint to reduce screen clutter */
   }
   .horizontal-track {
-    width: 100% !important;
-    height: auto !important;
-    flex-direction: column !important;
-    gap: 48px !important;
-    transform: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 300vw !important; /* Restore horizontal slider */
+    height: 100% !important;
+    will-change: transform;
   }
   .horizontal-slide {
-    width: 100% !important;
-    height: auto !important;
-    padding: 0 !important;
-    background: transparent !important;
+    width: 100vw !important;
+    height: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    background-color: var(--color-beige) !important;
   }
   .slide-bg-glyph {
     font-size: 8rem !important;
@@ -2624,36 +2633,40 @@ body {
     opacity: 0.05 !important;
   }
   .slide-corner-meta {
-    position: relative !important;
-    top: auto !important;
-    right: auto !important;
-    margin-bottom: 12px !important;
-    font-size: 0.6rem !important;
+    position: absolute !important;
+    top: calc(var(--nav-h) + 48px) !important;
+    right: 24px !important;
+    font-size: 0.5rem !important;
     display: block !important;
-    text-align: center !important;
   }
   .sp-slide {
-    width: 100% !important;
-    max-width: 500px !important;
+    width: 92% !important;
+    max-width: 330px !important;
     margin: 0 auto !important;
-    padding: 24px 20px !important;
+    padding: 20px 16px !important;
     box-sizing: border-box !important;
     transform: none !important;
   }
   .slide-content-grid {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
   }
   .slide-text h3 {
-    font-size: 1.7rem !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 6px !important;
   }
   .slide-text p {
-    font-size: 0.95rem !important;
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 8px !important;
   }
   .slide-image .photo-mount-box {
-    width: 100% !important;
-    max-width: 260px !important;
-    height: 180px !important;
+    width: 220px !important;
+    height: 150px !important;
   }
 
   /* ─── SCRAPBOOK SECTION ─── */
@@ -2685,71 +2698,79 @@ body {
     margin: 20px auto 0 auto !important;
   }
 
-  /* ─── PHILOSOPHY / SCROLLYTELLING SECTION ─── */
+  /* ─── PHILOSOPHY / SCROLLYTELLING SECTION (REIMAGINED STICKY MOBILE EFFECT) ─── */
   .section-mission {
-    height: auto !important;
-    padding: 80px 20px !important;
+    height: 220vh !important; /* Headroom scroll space for vertical slide transitions */
+    position: relative !important;
     box-sizing: border-box !important;
   }
   .mission-scrolly-container {
-    height: auto !important;
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 40px !important;
-    padding: 0 !important;
-    overflow: visible !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
   .mission-left-sticky {
-    max-width: 100% !important;
-  }
-  .mission-h {
-    font-size: 2rem !important;
-    text-align: center !important;
-    width: 100% !important;
-  }
-  .mission-rule {
-    margin: 0 auto 24px auto !important;
-  }
-  .mission-text-container {
-    height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 24px !important;
-  }
-  .mission-text-card {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    width: 100% !important;
-    max-width: 500px !important;
-    height: auto !important;
-    margin: 0 auto !important;
-    transform: none !important;
-    opacity: 1 !important;
-    z-index: 1 !important;
-    padding: 24px 20px !important;
-    box-sizing: border-box !important;
-  }
-  .mission-right-sticky {
-    height: auto !important;
-    position: relative !important;
-    top: auto !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 24px !important;
     width: 100% !important;
+    max-width: 330px !important;
+  }
+  .mission-h {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 12px !important;
+  }
+  .mission-rule {
+    margin: 0 auto 16px auto !important;
+  }
+  .mission-text-container {
+    position: relative !important;
+    width: 100% !important;
+    height: 230px !important;
+  }
+  .mission-text-card {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 230px !important;
+    padding: 18px 22px !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+  .mission-right-sticky {
+    position: relative !important;
+    width: 100% !important;
+    height: 220px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 10px !important;
   }
   .photo-scrap-item {
-    position: relative !important;
+    position: absolute !important;
+    top: auto !important;
     left: auto !important;
     right: auto !important;
-    top: auto !important;
-    width: 240px !important;
-    height: auto !important;
-    margin: 0 auto !important;
-    opacity: 1 !important;
+    bottom: auto !important;
+    width: 170px !important;
+    height: 220px !important;
+    margin: 0 !important;
     transform: none !important;
+  }
+  .photo-scrap-item .photo-mount-box {
+    height: 140px !important;
   }
 
   /* ─── SERVICES SECTION ─── */
