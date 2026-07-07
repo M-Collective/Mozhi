@@ -345,3 +345,52 @@ body {
 
 /* Wax Seal Peeling off smoothly */
 .wax-seal.peeling {
+  animation: seal-peel-away 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes seal-peel-away {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+  }
+
+  25% {
+    transform: translate(-42%, -62%) scale(0.95) rotate(-12deg);
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.25));
+  }
+
+  60% {
+    transform: translate(-20%, -98%) scale(0.75) rotate(-32deg);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(65%, -165%) scale(0.3) rotate(-55deg);
+    opacity: 0;
+    filter: none;
+  }
+}
+
+/* ─── 6. INVITATION CARD FLIP ──────────────────────────────────── */
+.card-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.92);
+  width: 470px;
+  height: 290px;
+  z-index: 2;
+  opacity: 0;
+  transition: transform 0.95s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.95s ease;
+  pointer-events: none;
+}
+
+.card-container.risen {
+  transform: translate(-50%, -50%) scale(1.02);
+  opacity: 1;
+}
+
+.card-inner {
