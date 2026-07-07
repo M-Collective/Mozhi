@@ -378,3 +378,27 @@
 
     .submit-btn:hover {
       background-color: var(--color-rust);
+      box-shadow: 0 8px 24px rgba(161, 78, 49, 0.25);
+    }
+
+    /* Beige Cardboard Success State Overlay */
+    .success-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: #e8dfcf;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      z-index: 10;
+      border: 1px solid #cfc7b5;
+      box-sizing: border-box;
+      /* Textured cardboard paper overlay */
+      background-image: 
+        repeating-linear-gradient(90deg, rgba(43, 31, 19, 0.008) 0px, rgba(43, 31, 19, 0.008) 1px, transparent 1px, transparent 12px),
