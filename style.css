@@ -1,0 +1,49 @@
+/* =====================================================================
+   * Mozhi Collective — Consolidated Rebuild Stylesheet
+   * Theme: Dark Maroon, Mud Green, Beige (Parchment)
+   * Premium Archival Aesthetics · Refined Scroll Physics
+   * ===================================================================== */
+
+/* ─── 1. DESIGN TOKENS & VARIABLES ──────────────────────────────── */
+:root {
+  /* Dynamic Color Themes */
+  --color-maroon-dark: #261111;
+  /* Primary Dark Maroon Background */
+  --color-maroon-mid: #3a1a1a;
+  /* Mid Maroon Card Background */
+  --color-mud-green: #353c2a;
+  /* Primary Mud Green Background */
+  --color-mud-green-light: #535c44;
+  /* Secondary Mud Green */
+  --color-mud-green-pale: #edf0e9;
+  /* Pale Green Typography Accent */
+  --color-beige: #f5f0e6;
+  /* Primary Beige (Parchment) Background */
+  --color-beige-dark: #e8e3d5;
+  /* Darker Beige Card Background */
+
+  /* Core Accents & Inks */
+  --color-ink: #1b1917;
+  /* Dark Ink for Beige sections */
+  --color-ink-muted: #5a534b;
+  --color-cream: #faf7f2;
+  /* Light Cream for Dark sections */
+  --color-rust: #a14e31;
+  --color-gold: #bca06f;
+  --color-gold-pale: #ebdaba;
+  --color-ink-red: #8c201a;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-handwritten: 'Caveat', cursive;
+
+  /* Dimensions */
+  --nav-h: 74px;
+
+  /* Drifting Light Positions */
+  --light-x: 50%;
+  --light-y: 40%;
+  --light-color: rgba(235, 215, 185, 0.16);
+  --shadow-angle: 45deg;
+}
