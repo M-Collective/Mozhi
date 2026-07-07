@@ -372,3 +372,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       // Enter Horizontal lock scrolling up
+      if (e.deltaY < 0 && Math.abs(scrollY - hTop) < 25 && horizSlideIndex > 0) {
+        activeSection = 'horizontal';
+        window.scrollTo(0, hTop);
+        e.preventDefault();
+        return;
+      }
+
+      // Enter Mission lock scrolling down
+      if (e.deltaY > 0 && Math.abs(scrollY - mTop) < 25 && missionSlideIndex < 2) {
+        activeSection = 'mission';
+        window.scrollTo(0, mTop);
+        e.preventDefault();
+        return;
+      }
+      // Enter Mission lock scrolling up
+      if (e.deltaY < 0 && Math.abs(scrollY - mTop) < 25 && missionSlideIndex > 0) {
+        activeSection = 'mission';
