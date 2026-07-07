@@ -2130,3 +2130,53 @@ body {
   .series-zigzag-row {
     grid-template-columns: 1fr;
     gap: 38px;
+  }
+
+  .series-zigzag-row.row-right {
+    direction: ltr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-col {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(235, 218, 186, 0.06);
+    padding-left: 0 !important;
+  }
+
+  .footer-col:last-child {
+    border-bottom: none;
+  }
+
+  .mission-scrolly-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 6vw;
+  }
+
+  .mission-right-sticky {
+    height: 380px;
+  }
+
+  .photo-scrap-item {
+    width: 220px;
+    height: 290px;
+  }
+
+  .photo-scrap-item .photo-mount-box {
+    height: 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .env-wrapper {
+    width: 320px;
+    height: 213px;
+  }
+
+  .card-container {
+    width: 280px;
