@@ -421,3 +421,20 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (activeSection === 'mission') {
       e.preventDefault();
       window.scrollTo(0, mTop);
+
+      if (isScrollThrottled) return;
+
+      if (e.deltaY > 0) {
+        if (missionSlideIndex < 2) {
+          missionSlideIndex++;
+          targetMissionProgress = missionSlideIndex * 0.5;
+          throttleScroll();
+        } else {
+          activeSection = 'none';
+          window.scrollTo(0, mTop + 15);
+        }
+      } else if (e.deltaY < 0) {
+        if (missionSlideIndex > 0) {
+          missionSlideIndex--;
+          targetMissionProgress = missionSlideIndex * 0.5;
+          throttleScroll();
