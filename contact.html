@@ -117,3 +117,26 @@
     }
 
     /* Layout responsive height configuration */
+    @media (min-height: 780px) and (min-width: 850px) {
+      html, body {
+        height: 100%;
+        overflow: hidden;
+      }
+      .contact-container {
+        height: 100vh;
+      }
+    }
+
+    @media (max-width: 850px), (max-height: 779px) {
+      body {
+        overflow-y: auto;
+      }
+      .contact-container {
+        padding-top: 140px;
+        padding-bottom: 40px;
+        min-height: 100vh;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .contact-navbar {
