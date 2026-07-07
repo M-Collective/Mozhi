@@ -1287,3 +1287,53 @@ body {
   transition: stroke-dashoffset 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
   will-change: stroke-dashoffset;
 }
+
+.series-hdr {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 5;
+}
+
+.series-hdr .stamp {
+  margin-bottom: 14px;
+  color: var(--color-gold-pale);
+  border-color: rgba(235, 218, 186, 0.3);
+}
+
+.section-h {
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 300;
+  color: var(--color-cream);
+}
+
+.section-h .h-amp {
+  font-style: italic;
+  font-family: var(--font-serif);
+  color: var(--color-gold-pale);
+}
+
+.series-zigzag-layout {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 5;
+}
+
+.series-zigzag-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.series-zigzag-row.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
