@@ -161,3 +161,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const id = sec.getAttribute('id');
       if (!id) return;
       const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      if (scrollY >= top - 250 && scrollY < top + height - 250) activeId = id;
+    });
+    if ((window.innerHeight + scrollY) >= document.documentElement.scrollHeight - 100) activeId = 'contact';
+    navLinksList.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${activeId}`) link.classList.add('active');
+    });
+  }
+
+  /* ===================================================================
+   * INERTIAL ANIMATION LOOP (rAF)
+   * =================================================================== */
+  function runScrollUpdate() {
+    const scrollY = window.scrollY;
+    const deltaY = Math.abs(scrollY - prevScrollY);
