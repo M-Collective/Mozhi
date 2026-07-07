@@ -47,3 +47,53 @@
   --light-color: rgba(235, 215, 185, 0.16);
   --shadow-angle: 45deg;
 }
+
+/* ─── 2. RESETS & BASICS ────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+  /* Handled smoothly via scroll-driven calculations */
+  background-color: var(--color-maroon-dark);
+}
+
+body {
+  background-color: var(--color-maroon-dark);
+  color: var(--color-cream);
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+
+/* Fine-detailed scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-maroon-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(188, 160, 111, 0.32);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(188, 160, 111, 0.5);
+}
+
+/* ─── 3. AMBIENT EFFECTS ────────────────────────────────────────── */
