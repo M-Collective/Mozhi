@@ -291,3 +291,19 @@ document.addEventListener('DOMContentLoaded', () => {
             scale2 = 0.92;
             z2 = 1;
           }
+
+          // Card 3 moves to top (y goes 8px -> 0px, scale 0.96 -> 1.0)
+          y3 = 8 * (1 - t2);
+          scale3 = 0.96 + 0.04 * t2;
+          z3 = t2 < 0.5 ? 2 : 3;
+        }
+
+        // Apply transforms to cards
+        // Card 1
+        if (currentMissionProgress < 0.5 && z1 === 1) {
+          missionCard1.style.transform = `translateY(calc(${y1}% + 16px)) scale(${scale1}) rotate(-1.5deg)`;
+        } else {
+          missionCard1.style.transform = `translateY(${y1}px) scale(${scale1}) rotate(-1.5deg)`;
+        }
+        missionCard1.style.zIndex = z1;
+
