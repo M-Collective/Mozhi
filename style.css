@@ -1238,3 +1238,52 @@ body {
   margin-bottom: 14px;
 }
 
+.ab-rule-line {
+  width: 50px;
+  height: 1px;
+  background: rgba(53, 60, 42, 0.22);
+}
+
+.ab-rule-glyph {
+  font-size: 1.1rem;
+  color: var(--color-mud-green);
+}
+
+.ab-tagline {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-ink);
+}
+
+.section-series {
+  padding: 50px 8vw;
+  position: relative;
+  background-color: #435b41; /* Lighter shade of forest green */
+  /* Highly-defined crumbled paper texture overlay with creases and folds */
+  background-image: 
+    /* Organic paper fibers */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.08' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+    /* Crumbled paper wrinkles lighting */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='5' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='%23ffffff' surfaceScale='7' result='light'%3E%3CfeDistantLight azimuth='50' elevation='45'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' fill='%23faf8f5'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+}
+
+.zigzag-svg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.zigzag-line-svg {
+  width: 100%;
+  height: 100%;
+}
+
+#zigzag-path-draw {
+  transition: stroke-dashoffset 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: stroke-dashoffset;
+}
