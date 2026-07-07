@@ -340,3 +340,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const startDraw = seriesSection.offsetTop - window.innerHeight;
       const totalDrawScroll = (seriesSection.offsetTop + seriesSection.scrollHeight - window.innerHeight) - startDraw;
       const t = Math.min(Math.max((scrollY - startDraw) / totalDrawScroll, 0), 1);
+      currentZigzagProgress += (t - currentZigzagProgress) * 0.04;
+      zigzagDraw.style.strokeDashoffset = 1200 - currentZigzagProgress * 1200;
+    }
+  }
+
+  function animLoop() {
+    runScrollUpdate();
+    requestAnimationFrame(animLoop);
+  }
+  requestAnimationFrame(animLoop);
+
+  /* ===================================================================
+   * DISCRETE SCROLL LOCKS (ONE SCROLL = ONE SLIDE / POLAROID)
+   * Prevents skips, ensures intentional controlled slide transitions
+   * =================================================================== */
+  window.addEventListener('wheel', (e) => {
