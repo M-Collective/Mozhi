@@ -1982,3 +1982,52 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 14px;
+}
+
+.social-link {
+  color: var(--color-gold-pale);
+  text-decoration: none;
+  font-size: 1rem;
+  opacity: 0.75;
+  transition: opacity 0.2s, transform 0.2s;
+  display: inline-block;
+}
+
+.social-link:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* Form input elements */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.54rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(235, 218, 186, 0.45);
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(255, 255, 255, 0.02);
+  border: none;
+  border-bottom: 1.5px solid rgba(235, 218, 186, 0.22);
+  /* Beige bottom border line */
