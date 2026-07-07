@@ -356,3 +356,19 @@ document.addEventListener('DOMContentLoaded', () => {
    * Prevents skips, ensures intentional controlled slide transitions
    * =================================================================== */
   window.addEventListener('wheel', (e) => {
+    if (window.innerWidth <= 768) return;
+    if (!horizSection || !missionSection) return;
+
+    const scrollY = window.scrollY;
+    const hTop = horizSection.offsetTop;
+    const mTop = missionSection.offsetTop;
+
+    if (activeSection === 'none') {
+      // Enter Horizontal lock scrolling down
+      if (e.deltaY > 0 && Math.abs(scrollY - hTop) < 25 && horizSlideIndex < 2) {
+        activeSection = 'horizontal';
+        window.scrollTo(0, hTop);
+        e.preventDefault();
+        return;
+      }
+      // Enter Horizontal lock scrolling up
