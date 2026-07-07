@@ -402,3 +402,27 @@
       /* Textured cardboard paper overlay */
       background-image: 
         repeating-linear-gradient(90deg, rgba(43, 31, 19, 0.008) 0px, rgba(43, 31, 19, 0.008) 1px, transparent 1px, transparent 12px),
+        repeating-linear-gradient(0deg, rgba(43, 31, 19, 0.012) 0px, rgba(43, 31, 19, 0.012) 1px, transparent 1px, transparent 9px),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.09' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    .success-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .success-overlay svg {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 20px;
+    }
+
+    .success-title {
+      font-size: 1.8rem;
+      color: #1b201a;
+      margin: 0 0 10px 0;
+      font-weight: 400;
+    }
+
+    .success-text {
+      font-size: 0.95rem;
