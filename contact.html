@@ -236,3 +236,26 @@
       border-bottom-color: var(--color-gold);
     }
 
+    .menu-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-rust);
+      opacity: 0.85;
+      letter-spacing: 0.1em;
+    }
+
+    .menu-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: rgba(251, 249, 244, 0.45);
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .menu-item:hover .menu-name {
+      color: rgba(251, 249, 244, 0.9);
+    }
+
+    .menu-item.active .menu-name {
+      color: var(--color-gold-pale);
+      font-weight: 400;
+    }
