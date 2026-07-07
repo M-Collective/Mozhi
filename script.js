@@ -242,3 +242,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (missionCard1 && missionCard2 && missionCard3) {
         let y1 = 0, scale1 = 1.0, z1 = 3;
+        let y2 = 8, scale2 = 0.96, z2 = 2;
+        let y3 = 16, scale3 = 0.92, z3 = 1;
+
+        if (currentMissionProgress < 0.5) {
+          // Phase 1: Card 1 flies to back
+          const t1 = Math.min(Math.max(currentMissionProgress / 0.5, 0), 1);
+          if (t1 < 0.5) {
+            const ft1 = t1 / 0.5;
+            y1 = 120 * ft1; // translate percentage out (positive translates down)
+            scale1 = 1.0 - 0.08 * ft1;
+            z1 = 3;
+          } else {
+            const ft1 = (t1 - 0.5) / 0.5;
+            y1 = 120 * (1 - ft1);
+            scale1 = 0.92;
+            z1 = 1;
