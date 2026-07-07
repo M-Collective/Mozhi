@@ -95,3 +95,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section.section');
   const navLinksList = document.querySelectorAll('#navbar .nav-links a');
   const slideGlyphs = document.querySelectorAll('.horizontal-slide .slide-bg-glyph');
+  const slidePhotos = document.querySelectorAll('.horizontal-slide .photo-mount-box');
+
+  // HUD UI elements
+  const gcSpan = document.querySelector('.gc-current');
+  const gpFill = document.getElementById('gallery-progress-fill');
+  const gHint = document.getElementById('gallery-scroll-hint');
+
+  // ── Native LERP scroll animation states ────────────────────────────
+  let currentHorizProgress = 0;
+  let currentMissionProgress = 0;
+  let currentZigzagProgress = 0;
+  let prevScrollY = window.scrollY;
+  let astrolabeRotation = 0;
+
+  // LERP Targets, Slide Indices, and Locks
+  let targetHorizProgress = 0;
+  let targetMissionProgress = 0;
