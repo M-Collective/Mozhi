@@ -438,3 +438,19 @@ document.addEventListener('DOMContentLoaded', () => {
           missionSlideIndex--;
           targetMissionProgress = missionSlideIndex * 0.5;
           throttleScroll();
+        } else {
+          activeSection = 'none';
+          window.scrollTo(0, mTop - 15);
+        }
+      }
+    }
+  }, { passive: false });
+
+  function throttleScroll() {
+    isScrollThrottled = true;
+    setTimeout(() => {
+      isScrollThrottled = false;
+    }, SCROLL_COOLDOWN);
+  }
+
+  // Safety release on large scroll deltas (trackpad scroll swipe releases)
