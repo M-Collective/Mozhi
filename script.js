@@ -177,3 +177,19 @@ document.addEventListener('DOMContentLoaded', () => {
   function runScrollUpdate() {
     const scrollY = window.scrollY;
     const deltaY = Math.abs(scrollY - prevScrollY);
+    prevScrollY = scrollY;
+
+    handleScrollSpy();
+
+    // Astrolabe — passive continuous rotation driven by scroll speed
+    astrolabeRotation += 0.06 + deltaY * 0.08;
+    document.querySelectorAll('.logo-astrolabe').forEach(astro => {
+      astro.style.transform = `rotate(${astrolabeRotation}deg)`;
+    });
+
+    // ── 1. Horizontal Gallery LERP ───────────────────────────────────
+    if (horizSection && horizTrack) {
+      if (activeSection === 'horizontal') {
+        currentHorizProgress += (targetHorizProgress - currentHorizProgress) * 0.12;
+      } else {
+        const offsetTop = horizSection.offsetTop;
