@@ -188,3 +188,27 @@
     }
 
     /* Content Layout Split */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    @media (max-width: 850px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .contact-header {
+        text-align: center;
+      }
+    }
+
+    /* Left Side: Minimal Services Menu */
+    .services-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
