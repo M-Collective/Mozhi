@@ -80,12 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ===================================================================
    * SCROLL INTERACTION & LAYOUT CACHING
    * =================================================================== */
-  const horizSection = document.getElementById('horizontal-scroll-section');
+  const horizSection = document.getElementById('about');
   const horizTrack = document.getElementById('horizontal-track');
-  const seriesSection = document.getElementById('series');
+  const seriesSection = document.getElementById('goals');
   const zigzagDraw = document.getElementById('zigzag-path-draw');
-  const missionSection = document.getElementById('mission');
-  const missionPols = [document.querySelector('#mission .pol-2'), document.querySelector('#mission .pol-3')];
+  const missionSection = document.getElementById('philosophy');
+  const missionPols = [document.querySelector('#philosophy .pol-2'), document.querySelector('#philosophy .pol-3')];
 
   const missionCard1 = document.getElementById('mission-card-1');
   const missionCard2 = document.getElementById('mission-card-2');
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (targetId === 'hero') {
             horizSlideIndex = 0; targetHorizProgress = 0;
             missionSlideIndex = 0; targetMissionProgress = 0;
-          } else if (targetId === 'series' || targetId === 'scrapbook') {
+          } else if (targetId === 'goals' || targetId === 'scrapbook') {
             horizSlideIndex = 2; targetHorizProgress = 1;
             missionSlideIndex = 0; targetMissionProgress = 0;
           } else if (targetId === 'contact' || targetId === 'services') {
