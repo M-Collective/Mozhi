@@ -46,3 +46,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ===================================================================
+   * INTERSECTION OBSERVER FOR IN-VIEW REVEALS
+   * =================================================================== */
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = entry.target;
+        target.classList.add('in-view');
+        target.querySelectorAll('[data-animate]').forEach(card => {
+          if (card.closest('.series-zigzag-layout') || card.closest('.mission-scrolly-container')) return;
+          card.classList.add('in-view');
+        });
+        sectionObserver.unobserve(target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
