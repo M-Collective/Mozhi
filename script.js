@@ -405,3 +405,19 @@ document.addEventListener('DOMContentLoaded', () => {
           targetHorizProgress = horizSlideIndex * 0.5;
           throttleScroll();
         } else {
+          activeSection = 'none';
+          window.scrollTo(0, hTop + 15);
+        }
+      } else if (e.deltaY < 0) {
+        if (horizSlideIndex > 0) {
+          horizSlideIndex--;
+          targetHorizProgress = horizSlideIndex * 0.5;
+          throttleScroll();
+        } else {
+          activeSection = 'none';
+          window.scrollTo(0, hTop - 15);
+        }
+      }
+    } else if (activeSection === 'mission') {
+      e.preventDefault();
+      window.scrollTo(0, mTop);
