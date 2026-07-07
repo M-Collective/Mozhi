@@ -470,3 +470,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactSection = document.getElementById('contact');
   if (contactSection) {
     contactSection.addEventListener('mousemove', (e) => {
+      const rect = contactSection.getBoundingClientRect();
+      const relativeY = ((e.clientY - rect.top) / rect.height) * 100;
+      contactSection.style.setProperty('--sheen-y', `${relativeY}%`);
+    });
+  }
+
+  /* ===================================================================
+   * FORM RESET ON SUBMIT
+   * =================================================================== */
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      contactForm.reset();
+    });
+  }
+
+});
