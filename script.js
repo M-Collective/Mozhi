@@ -193,3 +193,19 @@ document.addEventListener('DOMContentLoaded', () => {
         currentHorizProgress += (targetHorizProgress - currentHorizProgress) * 0.12;
       } else {
         const offsetTop = horizSection.offsetTop;
+        const totalScroll = horizSection.scrollHeight - window.innerHeight;
+        if (totalScroll > 0) {
+          const rawProgress = (scrollY - offsetTop) / totalScroll;
+          const progress = Math.min(Math.max(rawProgress, 0), 1);
+          currentHorizProgress += (progress - currentHorizProgress) * 0.12;
+          targetHorizProgress = currentHorizProgress;
+
+          // Map native progress back to discrete indices for scroll lock sync
+          horizSlideIndex = currentHorizProgress < 0.33 ? 0 : currentHorizProgress < 0.66 ? 1 : 2;
+        }
+      }
+
+      horizTrack.style.transform = `translateX(-${currentHorizProgress * 200}vw)`;
+
+      for (let i = 0; i < 3; i++) {
+        const cp = i * 0.5;
