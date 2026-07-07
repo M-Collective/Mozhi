@@ -1833,3 +1833,52 @@ body {
 }
 
 .photo-scrap-item {
+  position: absolute;
+  width: 290px;
+  height: 380px;
+  padding: 16px 16px 40px 16px;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.35);
+  background: var(--color-beige);
+  /* Beige paper base for polaroids */
+  border: 1px solid rgba(20, 18, 15, 0.12);
+  will-change: transform, opacity;
+  color: var(--color-ink);
+}
+
+.photo-scrap-item .photo-mount-box {
+  width: 100%;
+  height: 270px;
+  background-color: var(--color-maroon-dark);
+}
+
+.pol-1 {
+  z-index: 10;
+}
+
+.pol-2 {
+  z-index: 11;
+}
+
+.pol-3 {
+  z-index: 12;
+}
+
+/* ─── 14. SECTION 6: CONTACT & FOOTER (DEEP MAROON) ───────── */
+.section-contact {
+  background-color: #3b0a0a;
+  /* deep maroon base */
+  background-image:
+    radial-gradient(ellipse at 50% 20%, rgba(255, 255, 255, 0.04) 0%, transparent 60%),
+    linear-gradient(125deg,
+      #330707 0%,
+      #4c0f0f 18%,
+      #220303 35%,
+      #581313 50%,
+      #1d0202 65%,
+      #480d0d 80%,
+      #2a0404 100%);
+  background-size: cover;
+  color: var(--color-gold-pale);
+  min-height: 83vh;
+  max-height: 83vh;
+  display: flex;
