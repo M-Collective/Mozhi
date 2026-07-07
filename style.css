@@ -940,3 +940,53 @@ body {
 
 .scroll-track-horizontal {
   position: relative;
+  height: 100%;
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-beige);
+  /* Sticks on beige */
+}
+
+.gallery-hud {
+  position: absolute;
+  top: calc(var(--nav-h) + 20px);
+  left: 60px;
+  right: 60px;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.gallery-hud-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  color: var(--color-mud-green-light);
+  /* Mud green text accents */
+}
+
+.gallery-counter {
+  font-size: 1.7rem;
+  color: var(--color-ink-red);
+  /* Ink red highlight */
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gc-sep {
+  font-size: 0.8rem;
+  opacity: 0.4;
+  color: var(--color-ink-muted);
+}
+
+.gc-total {
+  font-size: 1.1rem;
