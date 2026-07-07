@@ -394,3 +394,53 @@ body {
 }
 
 .card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 4px;
+  box-shadow: 0 12px 42px rgba(0, 0, 0, 0.22), inset 0 0 35px rgba(255, 255, 255, 0.7);
+  background: var(--color-beige);
+  border: 1px solid rgba(20, 18, 15, 0.15);
+  overflow: hidden;
+}
+
+.card-texture {
+  position: absolute;
+  inset: 0;
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="ff"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.065" numOctaves="4" stitchTiles="stitch"/%3E%3CfeColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.055 0"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23ff)"/%3E%3C/svg%3E');
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Card Front Layout */
+.card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  transform: rotateY(0deg);
+}
+
+.card-front-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.card-hdr {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+}
