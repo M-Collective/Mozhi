@@ -2180,3 +2180,53 @@ body {
 
   .card-container {
     width: 280px;
+    height: 173px;
+    padding: 16px;
+  }
+
+  .card-tamil {
+    font-size: 2.1rem;
+  }
+
+  .card-text {
+    font-size: 0.78rem;
+  }
+
+  .card-sub {
+    font-size: 0.44rem;
+  }
+
+  .tap-hint,
+  .scroll-hint {
+    bottom: 30px;
+    font-size: 0.58rem;
+  }
+
+  @keyframes card-fly-to-nav {
+    0% {
+      transform: translate(-50%, -50%) scale(1.02);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(-30vw, -45vh) scale(0.08);
+      opacity: 0;
+    }
+  }
+}
+
+/* Manifesto Doodles */
+.manifesto-doodle-container {
+  position: relative;
+  width: 180px;
+  height: 280px;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+  flex-shrink: 0;
+  margin-bottom: 12px;
+}
+
+.manifesto-doodle {
+  display: block;
+  stroke: var(--color-gold-pale);
