@@ -616,3 +616,27 @@
       const briefLabel = document.getElementById('brief-label');
       const briefTextarea = document.getElementById('project-brief');
       if (briefLabel && briefTextarea) {
+        briefLabel.classList.add('animate-fade-in');
+        briefTextarea.classList.add('animate-fade-in');
+        
+        // Remove animation class after it plays to allow re-triggering
+        setTimeout(() => {
+          briefLabel.classList.remove('animate-fade-in');
+          briefTextarea.classList.remove('animate-fade-in');
+        }, 400);
+
+        briefLabel.innerText = serviceDetails[serviceKey].label;
+        briefTextarea.placeholder = serviceDetails[serviceKey].placeholder;
+      }
+
+      // 4. Update description text dynamically
+      const descText = document.getElementById('service-desc-text');
+      if (descText) {
+        descText.classList.add('animate-fade-in');
+        setTimeout(() => {
+          descText.classList.remove('animate-fade-in');
+        }, 400);
+        descText.innerText = serviceDetails[serviceKey].desc;
+      }
+    }
+
