@@ -1882,3 +1882,53 @@ body {
   min-height: 83vh;
   max-height: 83vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 8vw 20px 8vw;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes silk-wave {
+  0% {
+    background-position: 0% 30%;
+  }
+
+  100% {
+    background-position: 100% 70%;
+  }
+}
+
+.section-contact::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% var(--sheen-y, 30%), rgba(255, 235, 200, 0.02) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Center Logo Layout (Pushed down to be in the middle) */
+.footer-center-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 10vh;
+  z-index: 2;
+}
+
+.footer-logo-frame {
+  width: 320px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-frame svg {
+  width: 100%;
+  height: 100%;
+}
