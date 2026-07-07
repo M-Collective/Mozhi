@@ -212,3 +212,27 @@
       gap: 25px;
     }
 
+    .services-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      cursor: pointer;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(251, 249, 244, 0.08);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .menu-item:hover {
+      border-bottom-color: rgba(251, 249, 244, 0.3);
+    }
+
+    .menu-item.active {
+      border-bottom-color: var(--color-gold);
+    }
+
