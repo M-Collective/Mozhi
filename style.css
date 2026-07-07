@@ -2428,3 +2428,53 @@ body {
 .pc-doodle-box svg circle,
 .pc-doodle-box svg rect,
 .pc-doodle-box svg polygon {
+  stroke: rgba(23, 31, 22, 0.7);
+  fill: none;
+}
+
+.pc-meta {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+  margin-bottom: 4px;
+}
+
+.pc-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #171f16;
+}
+
+.pc-desc {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  opacity: 0.8;
+  margin: 0 0 12px 0;
+  font-weight: 300;
+}
+
+.pc-loc {
+  font-size: 0.7rem;
+  opacity: 0.5;
+  border-top: 1px dashed rgba(23, 31, 22, 0.1);
+  padding-top: 8px;
+  margin-top: auto;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .partners-double-scroll-wrap {
+    width: 90vw;
+    gap: 3vw;
+  }
+
+  .partners-title {
+    font-size: 2.2rem;
+  }
+
+  .series-zigzag-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
