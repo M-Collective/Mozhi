@@ -1634,3 +1634,53 @@ body {
 .deco-seal svg text {
   fill: var(--color-mud-green);
 }
+
+.deco-seal svg circle {
+  stroke: var(--color-mud-green);
+}
+
+.section-mission {
+  height: 100vh;
+  background-color: #232c22;
+  position: relative;
+  background-image: 
+    /* Soft ambient vignette lighting */
+    radial-gradient(circle at 50% 50%, transparent 20%, rgba(20, 24, 19, 0.4) 100%),
+    /* Horizontal threads */
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    /* Vertical threads */
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    /* Organic canvas fiber noise */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='weave'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.22' numOctaves='3' result='noise'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23weave)'/%3E%3C/svg%3E");
+  background-size: auto, 3px 3px, 3px 3px, auto;
+  background-position: center;
+}
+
+.mission-scrolly-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 8vw;
+  gap: 60px;
+  overflow: hidden;
+}
+
+.mission-left-sticky {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 500px;
+}
+
+.mission-h {
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-weight: 300;
+  color: var(--color-cream);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
