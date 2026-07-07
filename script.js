@@ -30,3 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let hovering = false;
     tiltWrap.addEventListener('mouseenter', () => {
       hovering = true;
+      tiltCard.style.transition = 'transform 0.12s linear';
+    });
+    tiltWrap.addEventListener('mousemove', (e) => {
+      if (!hovering) return;
+      const rect = tiltWrap.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      tiltCard.style.transform = `rotateY(${x * 9}deg) rotateX(${-y * 6}deg) scale(1.02)`;
+    });
+    tiltWrap.addEventListener('mouseleave', () => {
+      hovering = false;
+      tiltCard.style.transition = 'transform 0.7s cubic-bezier(0.25, 1, 0.5, 1)';
+      tiltCard.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+    });
+  }
+
