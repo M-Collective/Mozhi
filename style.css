@@ -1783,3 +1783,53 @@ body {
   color: var(--color-ink-red);
 }
 
+.stage-2 .mission-pillar-box .pnum {
+  color: var(--color-gold);
+}
+
+.stage-3 .mission-pillar-box .pnum {
+  color: var(--color-gold-pale);
+}
+
+.mission-pillar-box .ptext {
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+.card-meta-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.5rem;
+  letter-spacing: 0.14em;
+  opacity: 0.45;
+  margin-top: auto;
+  padding-top: 12px;
+  width: 100%;
+}
+
+.mission-cta {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold-pale);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(188, 160, 111, 0.3);
+  padding-bottom: 2px;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.mission-cta:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.mission-right-sticky {
+  position: relative;
+  height: 520px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-scrap-item {
