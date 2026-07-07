@@ -1039,3 +1039,53 @@ body {
   /* Green scroll hint */
 }
 
+.horizontal-track {
+  display: flex;
+  flex-direction: row;
+  width: 300vw;
+  height: 100%;
+  transform: translateX(0vw);
+  will-change: transform;
+}
+
+.horizontal-slide {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: var(--color-beige);
+}
+
+.slide-bg-glyph {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(14rem, 26vw, 25rem);
+  font-weight: 300;
+  color: rgba(53, 60, 42, 0.035);
+  /* Mud Green background glyphs */
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 0;
+}
+
+.slide-corner-meta {
+  position: absolute;
+  top: calc(var(--nav-h) + 68px);
+  right: 60px;
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
+  color: rgba(53, 60, 42, 0.4);
+}
+
+/* Paper cards inside Beige gallery */
+.scrap-paper {
+  position: relative;
+  background: var(--color-cream);
+  /* Off-white cream cards */
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="fb"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4" stitchTiles="stitch"/%3E%3CfeColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.05 0"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23fb)"/%3E%3C/svg%3E');
