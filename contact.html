@@ -593,3 +593,26 @@
         label: "Describe your campaign vision & consulting scope",
         placeholder: "Tell us what you want to execute. Describe the campaign goals, collaborative ideas, and ideal consultation timeline...",
         desc: "End-to-end execution, artist collaborations, and creative consulting for brands seeking stronger visual identity and intentional communication."
+      }
+    };
+
+    function selectService(serviceKey) {
+      // 1. Update active highlights on left-side menu items
+      document.querySelectorAll('.menu-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      const selectedItem = document.getElementById(`menu-srv-${serviceKey}`);
+      if (selectedItem) {
+        selectedItem.classList.add('active');
+      }
+
+      // 2. Update hidden form input value
+      const serviceInput = document.getElementById('selected-service-input');
+      if (serviceInput) {
+        serviceInput.value = serviceDetails[serviceKey].name;
+      }
+
+      // 3. Update textarea label and placeholder dynamically
+      const briefLabel = document.getElementById('brief-label');
+      const briefTextarea = document.getElementById('project-brief');
+      if (briefLabel && briefTextarea) {
