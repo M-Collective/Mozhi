@@ -543,3 +543,53 @@ body {
   animation: card-morph-to-navbar 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   pointer-events: none;
   z-index: 9999;
+  will-change: width, height, top, left, transform, background, border-radius;
+}
+
+.card-container.card-morphing #card-inner {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+@keyframes card-morph-to-navbar {
+  0% {
+    width: 470px;
+    height: 290px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.02);
+    background: var(--color-beige);
+    border-radius: 4px;
+    box-shadow: 0 12px 42px rgba(0, 0, 0, 0.22);
+  }
+
+  40% {
+    width: 600px;
+    height: 180px;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background: rgba(21, 20, 18, 0.95);
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  100% {
+    width: 100vw;
+    height: 74px;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0) scale(1);
+    background: rgba(21, 20, 18, 0.88);
+    border-radius: 0px;
+    box-shadow: none;
+  }
+}
+
+/* Header & Navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-h);
