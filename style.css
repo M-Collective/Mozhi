@@ -692,3 +692,53 @@ body {
   transform: scale(1);
   visibility: visible;
 }
+
+
+.section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scroll reveal items */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.85s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-animate] {
+  transition-delay: var(--d, 0s);
+}
+
+/* ─── 9. HERO SECTION (MAROON THEME) ───────────────────────────── */
+.section-hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding: 0 8vw;
+  background-color: var(--color-maroon-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 920px; /* Plenty of room to lay out 'Language shapes culture.' in one line! */
+  position: relative;
+  z-index: 5;
