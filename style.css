@@ -1337,3 +1337,52 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.series-card {
+  background-color: var(--color-beige);
+  /* Creased folds and fractal papery noise */
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 45%, rgba(0,0,0,0.06) 100%),
+    linear-gradient(55deg, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.3) 30%, rgba(0,0,0,0) 65%, rgba(255,255,255,0.2) 100%),
+    url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="fc"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" stitchTiles="stitch"/%3E%3CfeColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.06 0"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23fc)"/%3E%3C/svg%3E');
+  border: 1px solid rgba(20, 18, 15, 0.13);
+  padding: 20px 24px;
+  border-radius: 12px 28px 18px 30px / 24px 14px 28px 18px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: var(--color-ink);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.series-card:hover {
+  transform: translateY(-5px) rotate(0.3deg) scale(1.005);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+}
+
+.row-right .series-card {
+  background-color: var(--color-maroon-mid);
+  color: var(--color-gold-pale);
+  background-image: none;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.22);
+}
+
+.sc-num {
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  color: var(--color-rust);
+  margin-bottom: 8px;
+}
+
+.row-right .series-card .sc-num {
+  color: var(--color-gold);
+}
+
+.sc-title {
+  font-size: 1.45rem;
+  font-weight: 300;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
