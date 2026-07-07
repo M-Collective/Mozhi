@@ -791,3 +791,53 @@ body {
   transition: border-color 0.25s, color 0.25s, transform 0.25s;
 }
 
+.hero-cta svg {
+  transition: transform 0.25s ease;
+}
+
+.hero-cta:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  transform: translateX(2px);
+}
+
+.hero-cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* 3D tilt polaroid mount box */
+.hero-visual {
+  position: absolute;
+  right: 8vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.tilt-wrap {
+  perspective: 1200px;
+  width: 320px;
+  height: 410px;
+}
+
+.tilt-card {
+  width: 100%;
+  height: 100%;
+  background: var(--color-beige);
+  /* Beige paper pops against Maroon background */
+  border: 1px solid rgba(20, 18, 15, 0.15);
+  border-radius: 4px;
+  padding: 20px 20px 50px 20px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.tilt-img-box {
+  width: 100%;
+  height: 310px;
+  background-color: var(--color-maroon-dark);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
