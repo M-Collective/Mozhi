@@ -664,3 +664,27 @@
       submitBtn.innerHTML = "Recording...";
 
       const formData = {
+        name: clientName,
+        email: clientEmail,
+        service: selectedService,
+        brief: projectBrief
+      };
+
+      if (BACKEND_URL === "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL" || !BACKEND_URL) {
+        console.warn("Backend URL not configured. Simulating local success state.");
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+          const successOverlay = document.getElementById('success-state');
+          if (successOverlay) {
+            successOverlay.classList.add('active');
+          }
+        }, 1000);
+        return;
+      }
+
+      // Send form data to Google Apps Script
+      fetch(BACKEND_URL, {
+        method: "POST",
+        mode: "no-cors", // Bypasses CORS redirects safely
+        headers: {
