@@ -1932,3 +1932,53 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.footer-headline {
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(252, 241, 211, 0.9);
+  margin: 6px 0 0 0;
+  letter-spacing: 0.02em;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(235, 218, 186, 0.55);
+  margin: 4px 0 0 0;
+  line-height: 1.6;
+}
+
+/* Bottom Split Layout */
+.footer-bottom-grid {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  z-index: 2;
+  padding-bottom: 2vh;
+}
+
+.footer-bottom-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 350px;
+  text-align: left;
+}
+
+.footer-bottom-right {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 440px;
+  text-align: left;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
