@@ -112,3 +112,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // LERP Targets, Slide Indices, and Locks
   let targetHorizProgress = 0;
   let targetMissionProgress = 0;
+
+  let horizSlideIndex = 0;
+  let missionSlideIndex = 0;
+
+  let activeSection = 'none'; // 'none' | 'horizontal' | 'mission'
+  let isScrollThrottled = false;
+  const SCROLL_COOLDOWN = 600; // ms to throttle scroll wheels
+
+  /* ===================================================================
+   * NAVBAR SMOOTH SCROLL ROUTING
+   * =================================================================== */
+  navLinksList.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
