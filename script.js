@@ -79,3 +79,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ===================================================================
    * SCROLL INTERACTION & LAYOUT CACHING
+   * =================================================================== */
+  const horizSection = document.getElementById('horizontal-scroll-section');
+  const horizTrack = document.getElementById('horizontal-track');
+  const seriesSection = document.getElementById('series');
+  const zigzagDraw = document.getElementById('zigzag-path-draw');
+  const missionSection = document.getElementById('mission');
+  const missionPols = [document.querySelector('#mission .pol-2'), document.querySelector('#mission .pol-3')];
+
+  const missionCard1 = document.getElementById('mission-card-1');
+  const missionCard2 = document.getElementById('mission-card-2');
+  const missionCard3 = document.getElementById('mission-card-3');
+  const partnersSection = document.getElementById('services');
+
+  const sections = document.querySelectorAll('section.section');
+  const navLinksList = document.querySelectorAll('#navbar .nav-links a');
+  const slideGlyphs = document.querySelectorAll('.horizontal-slide .slide-bg-glyph');
