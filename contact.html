@@ -331,3 +331,27 @@
       transition: border-color 0.3s ease, background 0.3s ease !important;
       box-sizing: border-box !important;
       width: 100% !important;
+      border-radius: 0 !important;
+    }
+
+    .form-group input:focus, 
+    .form-group textarea:focus {
+      border-bottom-color: #802e1b !important;
+      background: rgba(43, 31, 19, 0.02) !important;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(43, 31, 19, 0.4) !important;
+      opacity: 1 !important;
+      font-style: italic !important;
+    }
+
+    .form-textarea {
+      min-height: 80px !important;
+      resize: none !important;
+      line-height: 1.6 !important;
+    }
+
+    /* Submit Button on Beige Cardboard */
+    .submit-btn {
