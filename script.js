@@ -144,3 +144,20 @@ document.addEventListener('DOMContentLoaded', () => {
             horizSlideIndex = 2; targetHorizProgress = 1;
             missionSlideIndex = 2; targetMissionProgress = 1;
           }
+
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  /* ===================================================================
+   * ACTIVE LINK SCROLLSPY
+   * =================================================================== */
+  function handleScrollSpy() {
+    let activeId = '';
+    const scrollY = window.scrollY;
+    sections.forEach(sec => {
+      const id = sec.getAttribute('id');
+      if (!id) return;
+      const top = sec.offsetTop;
