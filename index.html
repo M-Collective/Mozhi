@@ -115,3 +115,22 @@
           <!-- Gallery HUD -->
           <div class="gallery-hud" aria-hidden="true">
             <div class="gallery-hud-label font-mono">ABOUT US</div>
+            <div class="gallery-counter font-serif" id="gallery-counter">
+              <span class="gc-current">01</span>
+              <span class="gc-sep font-mono">/</span>
+              <span class="gc-total">03</span>
+            </div>
+            <div class="gallery-progress-bar">
+              <div class="gallery-progress-fill" id="gallery-progress-fill"></div>
+            </div>
+          </div>
+
+          <!-- Horizontal hint -->
+          <div class="gallery-scroll-hint" id="gallery-scroll-hint">
+            <svg viewBox="0 0 24 12" width="32" aria-hidden="true">
+              <polyline points="0,6 12,1 24,6" fill="none" stroke="rgba(182,144,90,0.5)" stroke-width="1.2" />
+              <polyline points="0,11 12,6 24,11" fill="none" stroke="rgba(182,144,90,0.25)" stroke-width="1.2" />
+            </svg>
+            <span class="font-mono">scroll to explore</span>
+          </div>
+
