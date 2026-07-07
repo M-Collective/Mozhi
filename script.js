@@ -307,3 +307,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         missionCard1.style.zIndex = z1;
 
+        // Card 2
+        if (currentMissionProgress >= 0.5 && z2 === 1) {
+          missionCard2.style.transform = `translateY(calc(${y2}% + 16px)) scale(${scale2}) rotate(-1.5deg)`;
+        } else {
+          missionCard2.style.transform = `translateY(${y2}px) scale(${scale2}) rotate(-1.5deg)`;
+        }
+        missionCard2.style.zIndex = z2;
+
+        // Card 3
+        missionCard3.style.transform = `translateY(${y3}px) scale(${scale3}) rotate(-1.5deg)`;
+        missionCard3.style.zIndex = z3;
+
+        // Coordinate polaroids entry with the 45% overlap layout
+        // pol-1 sits offset at -160px, pol-2 slides to 0px, pol-3 slides to 160px
+        const t1_pol = Math.min(Math.max(currentMissionProgress / 0.45, 0), 1);
+        const t2_pol = Math.min(Math.max((currentMissionProgress - 0.5) / 0.45, 0), 1);
+
