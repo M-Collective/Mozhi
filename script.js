@@ -128,3 +128,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const href = link.getAttribute('href');
       if (href && href.startsWith('#')) {
         e.preventDefault();
+        const targetId = href.replace('#', '');
+        const target = document.getElementById(targetId);
+        if (target) {
+          activeSection = 'none';
+
+          // Align scroll lock state indices based on destination section
+          if (targetId === 'hero') {
+            horizSlideIndex = 0; targetHorizProgress = 0;
+            missionSlideIndex = 0; targetMissionProgress = 0;
+          } else if (targetId === 'series' || targetId === 'scrapbook') {
+            horizSlideIndex = 2; targetHorizProgress = 1;
+            missionSlideIndex = 0; targetMissionProgress = 0;
+          } else if (targetId === 'contact' || targetId === 'services') {
+            horizSlideIndex = 2; targetHorizProgress = 1;
+            missionSlideIndex = 2; targetMissionProgress = 1;
+          }
