@@ -97,3 +97,52 @@ body {
 }
 
 /* ─── 3. AMBIENT EFFECTS ────────────────────────────────────────── */
+#light-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background: radial-gradient(circle 80vw at var(--light-x) var(--light-y),
+      var(--light-color) 0%, rgba(20, 10, 10, 0) 100%);
+  z-index: 9998;
+}
+
+#ambient-shadow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(var(--shadow-angle),
+      rgba(27, 25, 23, 0.04) 0%, transparent 45%, rgba(27, 25, 23, 0.05) 100%);
+  z-index: 9997;
+}
+
+/* ─── 4. ENTRY CONTAINER & HINTS ───────────────────────────────── */
+#entry-container {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  overflow-y: hidden;
+  background-color: var(--color-maroon-dark);
+  background-image:
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.025), transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(0, 0, 0, 0.45), transparent 70%);
+  transition: opacity 1.3s cubic-bezier(0.77, 0, 0.175, 1), visibility 1.3s;
+}
+
+#entry-container.scrollable {
+  overflow-y: scroll;
+}
+
+#entry-container::-webkit-scrollbar {
+  display: none;
+}
+
+#entry-container.fading {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.scroll-track {
+  position: relative;
+  height: 280vh;
