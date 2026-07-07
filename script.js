@@ -454,3 +454,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Safety release on large scroll deltas (trackpad scroll swipe releases)
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (activeSection === 'horizontal' && horizSection) {
+      if (Math.abs(scrollY - horizSection.offsetTop) > 80) activeSection = 'none';
+    }
+    if (activeSection === 'mission' && missionSection) {
+      if (Math.abs(scrollY - missionSection.offsetTop) > 80) activeSection = 'none';
+    }
+  });
+
+  /* ===================================================================
+   * SILK SHEEN CURSOR TRACKING (CONTACT SECTION)
+   * =================================================================== */
+  const contactSection = document.getElementById('contact');
+  if (contactSection) {
+    contactSection.addEventListener('mousemove', (e) => {
