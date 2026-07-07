@@ -324,3 +324,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const t1_pol = Math.min(Math.max(currentMissionProgress / 0.45, 0), 1);
         const t2_pol = Math.min(Math.max((currentMissionProgress - 0.5) / 0.45, 0), 1);
 
+        if (missionPols[0]) {
+          missionPols[0].style.transform = `translateX(calc((1 - ${t1_pol}) * 80vw)) rotate(5deg)`;
+          missionPols[0].style.opacity = t1_pol;
+        }
+        if (missionPols[1]) {
+          missionPols[1].style.transform = `translateX(calc((1 - ${t2_pol}) * 80vw + ${t2_pol} * 160px)) rotate(-4deg)`;
+          missionPols[1].style.opacity = t2_pol;
+        }
+      }
+    }
+
+    // ── 3. Zigzag Line Draw (slow LERP) ─────────────────────────────
+    if (seriesSection && zigzagDraw) {
+      const startDraw = seriesSection.offsetTop - window.innerHeight;
+      const totalDrawScroll = (seriesSection.offsetTop + seriesSection.scrollHeight - window.innerHeight) - startDraw;
+      const t = Math.min(Math.max((scrollY - startDraw) / totalDrawScroll, 0), 1);
