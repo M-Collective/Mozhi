@@ -1436,3 +1436,53 @@ body {
   color: var(--color-ink);
   line-height: 1.6;
   margin-bottom: 22px;
+}
+
+.mf-attr {
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  color: var(--color-ink-muted);
+}
+
+.series-ambient-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.series-pull-quote {
+  max-width: 320px;
+  text-align: center;
+}
+
+.spq-mark {
+  font-size: 3.5rem;
+  line-height: 1;
+  color: rgba(235, 218, 186, 0.15);
+  margin-bottom: -15px;
+}
+
+.spq-text {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: rgba(252, 241, 211, 0.72);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.spq-attr {
+  font-size: 0.52rem;
+  letter-spacing: 0.16em;
+  color: rgba(235, 218, 186, 0.45);
+}
+
+.series-ambient-glyph {
+  font-size: clamp(4rem, 8vw, 8rem);
+  color: rgba(235, 218, 186, 0.015);
+  margin-top: 30px;
+}
+
+.series-coord-block {
+  text-align: center;
