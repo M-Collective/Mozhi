@@ -258,3 +258,20 @@ document.addEventListener('DOMContentLoaded', () => {
             y1 = 120 * (1 - ft1);
             scale1 = 0.92;
             z1 = 1;
+          }
+
+          // Card 2 moves to top (y goes 8px -> 0px, scale 0.96 -> 1.0)
+          y2 = 8 * (1 - t1);
+          scale2 = 0.96 + 0.04 * t1;
+          z2 = t1 < 0.5 ? 2 : 3;
+
+          // Card 3 moves to middle (y goes 16px -> 8px, scale 0.92 -> 0.96)
+          y3 = 16 - 8 * t1;
+          scale3 = 0.92 + 0.04 * t1;
+          z3 = t1 < 0.5 ? 1 : 2;
+
+        } else {
+          // Phase 2: Card 2 flies to back
+          const t2 = Math.min(Math.max((currentMissionProgress - 0.5) / 0.5, 0), 1);
+
+          // Card 1 starts at bottom (y=16px, scale=0.92) and moves to middle (y=8px, scale=0.96)
