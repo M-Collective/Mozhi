@@ -209,3 +209,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       for (let i = 0; i < 3; i++) {
         const cp = i * 0.5;
+        const d = currentHorizProgress - cp;
+        if (slideGlyphs[i]) slideGlyphs[i].style.transform = `translate(-50%, -50%) translateX(${d * 24}vw)`;
+        if (slidePhotos[i]) slidePhotos[i].style.transform = `translateX(${-d * 14}vw)`;
+      }
+
+      if (gcSpan) gcSpan.textContent = currentHorizProgress < 0.33 ? '01' : currentHorizProgress < 0.66 ? '02' : '03';
+      if (gpFill) gpFill.style.width = `${currentHorizProgress * 100}%`;
+      if (gHint) {
+        if (currentHorizProgress > 0.02) gHint.classList.add('hidden');
+        else gHint.classList.remove('hidden');
+      }
+    }
+
+    // ── 2. Mission Scrollytelling LERP ───────────────────────────────
+    if (missionSection) {
+      if (activeSection === 'mission') {
+        currentMissionProgress += (targetMissionProgress - currentMissionProgress) * 0.12;
