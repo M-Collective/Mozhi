@@ -593,3 +593,52 @@ body {
   left: 0;
   width: 100%;
   height: var(--nav-h);
+  background: rgba(21, 20, 18, 0.88);
+  /* Translucent dark glass */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(245, 240, 230, 0.15);
+  /* Beige bottom border line */
+  z-index: 8500;
+  display: flex;
+  align-items: center;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+}
+
+#navbar::before {
+  display: none;
+}
+
+.hidden-nav {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.visible-nav {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo-wrap {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo-wrap:hover {
+  transform: scale(1.04);
+}
+
