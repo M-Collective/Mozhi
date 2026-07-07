@@ -1,0 +1,7 @@
+{
+  "name": "mozhi-collective",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static build - no compilation needed'"
+  }
+}
