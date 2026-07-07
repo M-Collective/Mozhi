@@ -275,3 +275,19 @@ document.addEventListener('DOMContentLoaded', () => {
           const t2 = Math.min(Math.max((currentMissionProgress - 0.5) / 0.5, 0), 1);
 
           // Card 1 starts at bottom (y=16px, scale=0.92) and moves to middle (y=8px, scale=0.96)
+          y1 = 16 - 8 * t2;
+          scale1 = 0.92 + 0.04 * t2;
+          z1 = t2 < 0.5 ? 1 : 2;
+
+          // Card 2
+          if (t2 < 0.5) {
+            const ft2 = t2 / 0.5;
+            y2 = 120 * ft2; // translate percentage out (positive translates down)
+            scale2 = 1.0 - 0.08 * ft2;
+            z2 = 3;
+          } else {
+            const ft2 = (t2 - 0.5) / 0.5;
+            y2 = 120 * (1 - ft2);
+            scale2 = 0.92;
+            z2 = 1;
+          }
