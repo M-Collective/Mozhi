@@ -2378,3 +2378,53 @@ body {
 
 .partner-card:nth-child(3n+3)::before {
   background: radial-gradient(circle at 35% 35%, #92b092 0%, #5e7a5e 60%, #304930 100%); /* green */
+}
+
+.partner-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 80%);
+  pointer-events: none;
+}
+
+.partners-marquee-track .washi {
+  display: none !important;
+}
+
+.partner-card:nth-child(even) {
+  transform: rotate(-1.5deg);
+}
+
+.partner-card:nth-child(odd) {
+  transform: rotate(1.2deg);
+}
+
+.pc-doodle-box {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(23, 31, 22, 0.03);
+  border: 1px solid rgba(23, 31, 22, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border-radius: 1px;
+}
+
+.pc-doodle-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
+.pc-doodle-box svg {
+  width: 50px;
+  height: 50px;
+}
+
+.pc-doodle-box svg path,
+.pc-doodle-box svg circle,
+.pc-doodle-box svg rect,
+.pc-doodle-box svg polygon {
