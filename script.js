@@ -226,3 +226,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (missionSection) {
       if (activeSection === 'mission') {
         currentMissionProgress += (targetMissionProgress - currentMissionProgress) * 0.12;
+      } else {
+        const offsetTopM = missionSection.offsetTop;
+        const totalScrollM = missionSection.scrollHeight - window.innerHeight;
+        if (totalScrollM > 0) {
+          const rawProgress = (scrollY - offsetTopM) / totalScrollM;
+          const progress = Math.min(Math.max(rawProgress, 0), 1);
+          currentMissionProgress += (progress - currentMissionProgress) * 0.12;
+          targetMissionProgress = currentMissionProgress;
+
+          // Map native progress back to discrete indices for scroll lock sync
+          missionSlideIndex = currentMissionProgress < 0.33 ? 0 : currentMissionProgress < 0.66 ? 1 : 2;
+        }
+      }
+
+      if (missionCard1 && missionCard2 && missionCard3) {
+        let y1 = 0, scale1 = 1.0, z1 = 3;
