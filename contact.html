@@ -640,3 +640,27 @@
       }
     }
 
+    // Initialize with default (direction) on load
+    window.addEventListener('DOMContentLoaded', () => {
+      selectService('direction');
+    });
+
+    // Replace this placeholder with your actual Google Apps Script Web App URL
+    const BACKEND_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const submitBtn = event.target.querySelector('.submit-btn');
+      const originalBtnText = submitBtn.innerHTML;
+      
+      const clientName = document.getElementById('client-name').value;
+      const clientEmail = document.getElementById('client-email').value;
+      const selectedService = document.getElementById('selected-service-input').value;
+      const projectBrief = document.getElementById('project-brief').value;
+
+      // Enable loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "Recording...";
+
+      const formData = {
