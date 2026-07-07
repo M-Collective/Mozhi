@@ -688,3 +688,27 @@
         method: "POST",
         mode: "no-cors", // Bypasses CORS redirects safely
         headers: {
+          "Content-Type": "text/plain"
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(() => {
+        // Show success state overlay
+        const successOverlay = document.getElementById('success-state');
+        if (successOverlay) {
+          successOverlay.classList.add('active');
+        }
+      })
+      .catch(error => {
+        console.error("Submission Error:", error);
+        alert("An error occurred while logging your coordinates. Please check your connection and try again.");
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      });
+    }
+  </script>
+
+</body>
+</html>
