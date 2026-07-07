@@ -1188,3 +1188,53 @@ body {
 }
 
 .ink-gold {
+  color: #8e6c38;
+}
+
+.slide-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide-image .photo-mount-box {
+  width: 250px;
+  height: 200px;
+}
+
+.photo-cap {
+  font-family: var(--font-handwritten);
+  font-size: 1.05rem;
+  color: var(--color-ink-muted);
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ─── 11. SECTION 3: SERIES (MUD GREEN THEME) ────────────────── */
+.archive-bridge {
+  padding: 80px 8vw 20px;
+  text-align: center;
+  background-color: var(--color-beige);
+  /* Align divider layout with beige bg */
+}
+
+.ab-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ab-coord {
+  font-size: 0.54rem;
+  letter-spacing: 0.24em;
+  color: rgba(53, 60, 42, 0.45);
+  margin-bottom: 14px;
+}
+
+.ab-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
