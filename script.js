@@ -389,3 +389,19 @@ document.addEventListener('DOMContentLoaded', () => {
       // Enter Mission lock scrolling up
       if (e.deltaY < 0 && Math.abs(scrollY - mTop) < 25 && missionSlideIndex > 0) {
         activeSection = 'mission';
+        window.scrollTo(0, mTop);
+        e.preventDefault();
+        return;
+      }
+    } else if (activeSection === 'horizontal') {
+      e.preventDefault();
+      window.scrollTo(0, hTop);
+
+      if (isScrollThrottled) return;
+
+      if (e.deltaY > 0) {
+        if (horizSlideIndex < 2) {
+          horizSlideIndex++;
+          targetHorizProgress = horizSlideIndex * 0.5;
+          throttleScroll();
+        } else {
