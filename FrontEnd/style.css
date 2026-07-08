@@ -636,6 +636,7 @@ body {
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease;
+  overflow: visible;
 }
 
 .nav-logo-wrap:hover {
@@ -645,6 +646,7 @@ body {
 .nav-logo-svg {
   width: 100%;
   height: 100%;
+  overflow: visible;
 }
 
 .nav-links {
@@ -2544,41 +2546,42 @@ body {
   .section-hero {
     flex-direction: column !important;
     min-height: auto !important;
-    padding: 130px 20px 80px 20px !important;
+    padding: 140px 24px 80px 24px !important;
     box-sizing: border-box;
   }
   .hero-inner {
     max-width: 100% !important;
   }
   .hero-text {
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     width: 100% !important;
   }
   .hero-heading {
-    font-size: 2.3rem !important;
-    line-height: 1.2 !important;
+    font-size: 2.4rem !important;
+    line-height: 1.15 !important;
   }
   .hero-desc {
     font-size: 1.05rem !important;
-    margin: 0 auto 30px auto !important;
+    margin: 0 0 32px 0 !important;
   }
   .hero-visual {
     position: relative !important;
     right: auto !important;
     top: auto !important;
     transform: none !important;
-    margin-top: 40px !important;
+    margin-top: 48px !important;
     width: 100% !important;
     display: flex !important;
     justify-content: center !important;
   }
   .tilt-wrap {
-    width: 280px !important;
-    height: 360px !important;
+    width: 290px !important;
+    height: 370px !important;
   }
   .tilt-card {
-    padding: 16px 16px 40px 16px !important;
+    padding: 18px 18px 44px 18px !important;
+    transform: rotate(1deg) !important; /* Premium organic desk tilt */
   }
   
   /* ─── ABOUT US (HORIZONTAL SCROLL) GALLERY (REIMAGINED STICKY MOBILE EFFECT) ─── */
@@ -2607,12 +2610,12 @@ body {
     z-index: 50 !important;
   }
   .gallery-scroll-hint {
-    display: none !important; /* Hide scroll hint to reduce screen clutter */
+    display: none !important;
   }
   .horizontal-track {
     display: flex !important;
     flex-direction: row !important;
-    width: 300vw !important; /* Restore horizontal slider */
+    width: 300vw !important;
     height: 100% !important;
     will-change: transform;
   }
@@ -2643,59 +2646,87 @@ body {
     width: 92% !important;
     max-width: 330px !important;
     margin: 0 auto !important;
-    padding: 20px 16px !important;
+    padding: 22px 18px !important;
     box-sizing: border-box !important;
-    transform: none !important;
+    transform: rotate(-0.5deg) !important; /* Fine tilt angle */
   }
   .slide-content-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 15px !important;
-    align-items: center !important;
-    text-align: center !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     width: 100% !important;
   }
   .slide-text h3 {
     font-size: 1.5rem !important;
     margin-bottom: 6px !important;
+    align-self: flex-start;
   }
   .slide-text p {
     font-size: 0.88rem !important;
     line-height: 1.5 !important;
     margin-bottom: 8px !important;
   }
+  .slide-image {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .slide-image .photo-mount-box {
     width: 220px !important;
     height: 150px !important;
   }
 
-  /* ─── SCRAPBOOK SECTION ─── */
+  /* ─── SCRAPBOOK SECTION (PREMIUM OVERLAPPING COLLAGE) ─── */
   .section-scrapbook {
     height: auto !important;
-    padding: 80px 20px !important;
+    padding: 100px 24px !important;
     box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 36px !important;
+    display: block !important;
+    position: relative !important;
   }
+  
+  /* Overlapping scattered papers arrangement */
   .section-scrapbook .scrap-paper {
     position: relative !important;
     left: auto !important;
     top: auto !important;
     right: auto !important;
     bottom: auto !important;
-    width: 100% !important;
-    max-width: 500px !important;
-    margin: 0 auto !important;
-    transform: none !important;
     box-sizing: border-box !important;
+  }
+
+  .section-scrapbook .scrap-paper:nth-child(1n) {
+    width: 92% !important;
+    max-width: 340px !important;
+    margin: 0 auto 36px 0 !important;
+    transform: rotate(-1deg) !important;
     padding: 28px 24px !important;
   }
+
+  .section-scrapbook .scrap-paper:nth-child(2n) {
+    width: 72% !important;
+    max-width: 260px !important;
+    margin: -16px 0 36px auto !important;
+    transform: rotate(2deg) !important;
+    padding: 20px 18px !important;
+  }
+
+  .section-scrapbook .scrap-paper:nth-child(3n) {
+    width: 68% !important;
+    max-width: 240px !important;
+    margin: -24px 0 0 16px !important;
+    transform: rotate(-2deg) !important;
+    padding: 20px 18px !important;
+  }
+
   .section-scrapbook .deco-seal {
     position: relative !important;
     bottom: auto !important;
     right: auto !important;
-    margin: 20px auto 0 auto !important;
+    margin: 32px auto 0 auto !important;
   }
 
   /* ─── PHILOSOPHY / SCROLLYTELLING SECTION (REIMAGINED STICKY MOBILE EFFECT) ─── */
@@ -2721,18 +2752,18 @@ body {
   .mission-left-sticky {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     width: 100% !important;
     max-width: 330px !important;
   }
   .mission-h {
-    font-size: 1.8rem !important;
-    text-align: center !important;
+    font-size: 1.9rem !important;
+    text-align: left !important;
     width: 100% !important;
     margin-bottom: 12px !important;
   }
   .mission-rule {
-    margin: 0 auto 16px auto !important;
+    margin: 0 0 16px 0 !important;
   }
   .mission-text-container {
     position: relative !important;
@@ -2747,7 +2778,7 @@ body {
     height: 230px !important;
     padding: 18px 22px !important;
     box-sizing: border-box !important;
-    transform: none !important;
+    transform: rotate(-0.5deg) !important;
   }
   .mission-right-sticky {
     position: relative !important;
@@ -2767,7 +2798,7 @@ body {
     width: 170px !important;
     height: 220px !important;
     margin: 0 !important;
-    transform: none !important;
+    transform: rotate(1deg) !important;
   }
   .photo-scrap-item .photo-mount-box {
     height: 140px !important;
